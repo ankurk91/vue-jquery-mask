@@ -8,6 +8,8 @@
 
 Vue.js v2.x component for [jQuery Mask Plugin](https://github.com/igorescobar/jQuery-Mask-Plugin)
 
+## Demo on [JSFiddle](https://jsfiddle.net/ankurk91/d92xgzhL/)
+
 ## Requirements
 * jQuery >=1.7.0 
  
