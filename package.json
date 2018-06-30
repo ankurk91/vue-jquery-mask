@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Vue.js component for jquery mask plugin",
   "main": "dist/vue-jquery-mask.js",
-  "unpkg": "dist/vue-jquery-mask.min.js",
+  "browser": "dist/vue-jquery-mask.min.js",
   "files": [
     "src",
     "dist"
@@ -15,7 +15,8 @@
   "keywords": [
     "vue",
     "mask",
-    "jquery"
+    "jquery",
+    "input-mask"
   ],
   "author": "ankurk91",
   "license": "MIT",
