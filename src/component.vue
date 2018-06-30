@@ -46,11 +46,11 @@
       /**
        * Update v-model upon change triggered by date-picker itself
        */
-      onChange(value, ...args) {
+      onChange(...args) {
         if (typeof this.onChangeFn === 'function') {
-          this.onChangeFn.call(this, arguments)
+          this.onChangeFn.call(this, ...args)
         }
-        let toEmit = this.raw ? jQuery(this.$el).cleanVal() : value;
+        let toEmit = this.raw ? jQuery(this.$el).cleanVal() : arguments[0];
         this.$emit('input', toEmit);
       }
     },

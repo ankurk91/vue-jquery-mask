@@ -132,8 +132,8 @@
         console.log('Set new phone value');
         this.form.phoneNumber = '919800123456';
       },
-      onChangeDate(val) {
-        console.log('onChangeDate - ', val)
+      onChangeDate(val, e) {
+        console.log('onChangeDate - ', val, e)
       }
     },
   }
