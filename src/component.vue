@@ -17,7 +17,7 @@
       },
       mask: {
         required: true,
-        type: String, Function
+        type: [String, Function]
       },
       options: {
         type: Object,
