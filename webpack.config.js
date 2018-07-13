@@ -42,18 +42,21 @@ module.exports = {
     libraryTarget: 'umd',
     libraryExport: 'default',
     umdNamedDefine: true,
+    // Workaround to fix umd build, restore webpack v3 behaviour
+    // https://github.com/webpack/webpack/issues/6642
+    globalObject: "this"
   },
   module: {
     rules: [
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        exclude:  /node_modules/,
+        exclude: /node_modules/,
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude:  /node_modules/,
+        exclude: /node_modules/,
       },
     ]
   },
