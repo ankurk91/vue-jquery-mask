@@ -1,6 +1,6 @@
 <template>
 
-  <input type="text">
+  <input :type="type" v-bind="$attrs" v-on="inputListeners">
 
 </template>
 
@@ -10,6 +10,7 @@
 
   export default {
     name: 'jquery-mask',
+    inheritAttrs: false,
     props: {
       value: {
         required: true,
@@ -68,6 +69,19 @@
       value(newValue) {
         jQuery(this.$el).val(jQuery(this.$el).masked(newValue));
       },
+    },
+    computed: {
+      inputListeners() {
+        return jQuery.extend(true, {},
+          // Add all the listeners from the parent
+          this.$listeners,
+          {
+            blur: (event) => {
+              this.$emit('blur', this.value)
+            }
+          }
+        )
+      }
     },
     beforeDestroy() {
       jQuery(this.$el).unmask();

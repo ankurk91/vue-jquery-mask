@@ -5,7 +5,7 @@ import Vue from 'vue';
 Vue.config.productionTip = false;
 
 // vee-validate is just for demo
-import VeeValidate, {Validator} from 'vee-validate';
+import VeeValidate from 'vee-validate';
 
 Vue.use(VeeValidate, {
   events: 'input|blur'

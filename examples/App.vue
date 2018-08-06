@@ -104,6 +104,7 @@
         form: {
           phoneNumber: '',
           date: null,
+          money: null
         },
         options: {
           date: {
