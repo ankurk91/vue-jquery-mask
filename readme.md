@@ -87,6 +87,7 @@ The component accepts these props:
 | mask            | String / Function  | ` `      |  `true`     | Masking pattern |
 | options         | Object             | `{}`     |  `false`    | Configuration [options](http://igorescobar.github.io/jQuery-Mask-Plugin/docs.html)|
 | raw             | Boolean            | `true`   |  `false`    | When set to `false`; emits formatted value with format pattern and delimiters |
+| type            | String             | `text`   | `false`     | Set input type; for eg: `tel` |
 
 ## Install in non-module environments (without webpack)
 ```html
