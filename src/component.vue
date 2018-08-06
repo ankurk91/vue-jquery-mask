@@ -15,6 +15,9 @@
       value: {
         required: true,
         default: null,
+        validator(value) {
+          return value === null || typeof value === 'string' || value instanceof String || typeof value === 'number'
+        }
       },
       mask: {
         required: true,
