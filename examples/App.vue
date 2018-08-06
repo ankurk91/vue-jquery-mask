@@ -111,7 +111,7 @@
     data() {
       return {
         form: {
-          phoneNumber: '',
+          phoneNumber: 123456789,
           date: null,
           money: null
         },

@@ -45,7 +45,9 @@
       // Inject our onChange callback
       let newOptions = jQuery.extend(true, {}, this.options, {onChange: this.onChange});
       // Lastly init the mask
-      jQuery(this.$el).mask(this.mask, newOptions)
+      jQuery(this.$el).mask(this.mask, newOptions);
+      // Set initial value
+      jQuery(this.$el).val(jQuery(this.$el).masked(this.value));
     },
     methods: {
       /**
@@ -64,7 +66,6 @@
       /**
        * Listen to change from outside of component and update DOM
        *
-       * @param newValue
        */
       value(newValue) {
         jQuery(this.$el).val(jQuery(this.$el).masked(newValue));
