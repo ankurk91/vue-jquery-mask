@@ -33,16 +33,22 @@
           <div class="form-group">
             <label>Enter phone number</label>
             <vue-mask class="form-control" v-model="form.phoneNumber" mask="00-00000-00000"></vue-mask>
+            <span class="form-text text-muted small">
+              {{form.phoneNumber}}
+            </span>
           </div>
 
           <div class="form-group">
-            <label>Enter date</label>
+            <label>Enter date (<code>raw:false</code>)</label>
             <vue-mask class="form-control"
                       v-model="form.date"
                       mask="00/00/0000"
                       :raw="false"
                       :options="options.date"
             ></vue-mask>
+            <span class="form-text text-muted small">
+              {{form.date}}
+            </span>
           </div>
 
           <div class="form-group" :class="{'has-error' : errors.has('money')}">
@@ -55,6 +61,9 @@
                       class="form-control"
                       :class="{'is-invalid' : errors.has('money')}"
             ></vue-mask>
+            <span class="form-text text-muted small" v-show="!errors.has('money')">
+              {{form.money}}
+            </span>
             <span v-show="errors.has('money')"
                   class="invalid-feedback">{{ errors.first('money') }}</span>
           </div>
