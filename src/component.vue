@@ -1,7 +1,5 @@
 <template>
-
-  <input :type="type" v-bind="$attrs" v-on="inputListeners">
-
+  <input :type="type" @blur="onBlur">
 </template>
 
 <script>
@@ -10,7 +8,6 @@
 
   export default {
     name: 'jquery-mask',
-    inheritAttrs: false,
     props: {
       value: {
         required: true,
@@ -32,6 +29,7 @@
         type: Boolean,
         default: true
       },
+      // Input type, for example `tel`
       type: {
         type: String,
         default: 'text'
@@ -63,6 +61,9 @@
         if (typeof this.onChangeFn === 'function') {
           this.onChangeFn.call(this, ...args)
         }
+      },
+      onBlur(event) {
+        this.$emit('blur', this.value)
       }
     },
     watch: {
@@ -73,19 +74,6 @@
       value(newValue) {
         jQuery(this.$el).val(jQuery(this.$el).masked(newValue));
       },
-    },
-    computed: {
-      inputListeners() {
-        return jQuery.extend(true, {},
-          // Add all the listeners from the parent
-          this.$listeners,
-          {
-            blur: (event) => {
-              this.$emit('blur', this.value)
-            }
-          }
-        )
-      }
     },
     beforeDestroy() {
       jQuery(this.$el).unmask();
