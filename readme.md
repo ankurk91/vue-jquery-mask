@@ -1,4 +1,4 @@
-# Vue jQuery Mask Plugin
+# Vue jQuery Mask Component
 
 [![vue-js](https://img.shields.io/badge/vue.js-2.x-brightgreen.svg?maxAge=604800)](https://vuejs.org/)
 [![downloads](https://img.shields.io/npm/dt/vue-jquery-mask.svg)](http://npm-stats.com/~packages/vue-jquery-mask)
@@ -87,7 +87,6 @@ The component accepts these props:
 | mask            | String / Function  | ` `      |  `true`     | Masking pattern |
 | options         | Object             | `{}`     |  `false`    | Configuration [options](http://igorescobar.github.io/jQuery-Mask-Plugin/docs.html)|
 | raw             | Boolean            | `true`   |  `false`    | When set to `false`; emits formatted value with format pattern and delimiters |
-| type            | String             | `text`   | `false`     | Set input type; for eg: `tel` |
 
 ## Install in non-module environments (without webpack)
 ```html
