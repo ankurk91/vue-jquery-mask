@@ -1,9 +1,7 @@
 # http://git-scm.com/docs/gitignore
 
-# phpstorm, webstorm
+# various IDEs
 .idea/
-
-# sublime and other ide
 .project
 *.sublime-*
 .brackets.json
@@ -42,9 +40,6 @@ $RECYCLE.BIN/
 
 # node packages
 node_modules/
-
-# bower packages
-bower_components/
 
 # Composer, exclude on root vendor folder
 /vendor/
