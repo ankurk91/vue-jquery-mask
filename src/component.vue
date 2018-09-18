@@ -1,5 +1,5 @@
 <template>
-  <input type="text" @blur="onBlur">
+  <input type="text" @blur="onBlur" @input="onInput">
 </template>
 
 <script>
@@ -31,15 +31,11 @@
       },
     },
     data() {
-      return {
-        onChangeFn: null
-      }
+      return {}
     },
     mounted() {
-      // Backup onChange callback
-      this.onChangeFn = this.options.onChange;
-      // Inject our onChange callback
-      let newOptions = jQuery.extend(true, {}, this.options, {onChange: this.onChange});
+      // Clone configs
+      let newOptions = jQuery.extend(true, {}, this.options);
       // Lastly init the mask
       jQuery(this.$el).mask(this.mask, newOptions);
       // Set initial value
@@ -47,15 +43,13 @@
     },
     methods: {
       /**
-       * Update v-model upon change triggered by plugin itself
+       * Update v-model upon change triggered by user
        */
-      onChange(...args) {
-        let toEmit = this.raw ? jQuery(this.$el).cleanVal() : arguments[0];
-        this.$emit('input', toEmit);
-
-        if (typeof this.onChangeFn === 'function') {
-          this.onChangeFn.call(this, ...args)
-        }
+      onInput(event) {
+        this.$nextTick(() => {
+          let toEmit = this.raw ? jQuery(this.$el).cleanVal() : event.target.value;
+          this.$emit('input', toEmit);
+        });
       },
       onBlur(event) {
         this.$emit('blur', this.value)
@@ -72,7 +66,6 @@
     },
     beforeDestroy() {
       jQuery(this.$el).unmask();
-      this.onChangeFn = null
     }
   }
 </script>
