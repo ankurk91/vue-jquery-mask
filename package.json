@@ -1,6 +1,6 @@
 {
   "name": "vue-jquery-mask",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Vue.js component for jquery mask plugin",
   "main": "dist/vue-jquery-mask.js",
   "browser": "dist/vue-jquery-mask.min.js",

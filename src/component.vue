@@ -1,5 +1,5 @@
 <template>
-  <input type="text" @blur="onBlur" @input="onInput">
+  <input type="text" @blur="onBlur" @input="onInput" @keyup="onKeyup">
 </template>
 
 <script>
@@ -53,6 +53,9 @@
       },
       onBlur(event) {
         this.$emit('blur', this.value)
+      },
+      onKeyup(event) {
+        this.$emit('keyup', event)
       }
     },
     watch: {

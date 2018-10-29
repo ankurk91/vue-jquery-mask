@@ -22,7 +22,7 @@ npm install vue-jquery-mask --save
 yarn add vue-jquery-mask
 ```
 
-#### Using Webpack? 
+#### Using Webpack?
 * Webpack users need to configure [ProvidePlugin](https://webpack.js.org/plugins/provide-plugin/)
 ```js
 // webpack.config.js
@@ -85,6 +85,7 @@ The component accepts these props:
 | :---            |  :---:             | :---:    |  :---:      | :---             |
 | v-model / value | String / `null`    |`null`    |  `true`     | Set or Get input value |
 | mask            | String / Function  | ` `      |  `true`     | Masking pattern |
+| keyup           | Function / `null`  | `null`   |  `false`    | Keyup binding to input field |
 | options         | Object             | `{}`     |  `false`    | Configuration [options](http://igorescobar.github.io/jQuery-Mask-Plugin/docs.html)|
 | raw             | Boolean            | `true`   |  `false`    | When set to `false`; emits formatted value with format pattern and delimiters |
 
