@@ -26,10 +26,10 @@
   "homepage": "https://github.com/ankurk91/vue-jquery-mask",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run dev",
+    "start": "yarn run dev",
     "dev": "cross-env NODE_ENV=development webpack-serve --config=webpack.config.dev.js",
     "build": "cross-env NODE_ENV=production webpack --progress --mode production",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "yarn run build"
   },
   "dependencies": {
     "jquery-mask-plugin": "^1.14.15"
@@ -41,18 +41,18 @@
     "bootstrap": "^4.1.2",
     "clean-webpack-plugin": "^0.1.18",
     "cross-env": "^5.1.6",
-    "css-loader": "^1.0.0",
+    "css-loader": "^1.0.1",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
     "jquery": "^3.3.1",
-    "style-loader": "^0.23.0",
+    "style-loader": "^0.23.1",
     "unminified-webpack-plugin": "^2.0.0",
-    "vee-validate": "^2.1.0-beta.6",
+    "vee-validate": "^2.1.2",
     "vue": "^2.5.13",
     "vue-loader": "^15.2.2",
     "vue-template-compiler": "^2.5.13",
-    "webpack": "^4.16.0",
-    "webpack-cli": "^3.1.0",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2",
     "webpack-serve": "^2.0.2"
   },
   "peerDependencies": {
