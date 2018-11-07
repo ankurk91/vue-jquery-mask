@@ -35,9 +35,9 @@
     "jquery-mask-plugin": "^1.14.15"
   },
   "devDependencies": {
-    "babel-core": "^6.25.0",
-    "babel-loader": "^7.1.5",
-    "babel-preset-env": "^1.6.1",
+    "@babel/core": "^7.1.5",
+    "@babel/preset-env": "^7.1.5",
+    "babel-loader": "^8.0.4",
     "bootstrap": "^4.1.2",
     "clean-webpack-plugin": "^0.1.18",
     "cross-env": "^5.1.6",
