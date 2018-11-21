@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.0.3](https://github.com/ankurk91/vue-jquery-mask/compare/1.0.2...1.0.3)
+* Fix: issue [#5](https://github.com/ankurk91/vue-jquery-mask/issues/5)
+
 ## [1.0.2](https://github.com/ankurk91/vue-jquery-mask/compare/1.0.1...1.0.2)
 * Fix: issue [#1](https://github.com/ankurk91/vue-jquery-mask/issues/1)
 * Add: `blur` event
