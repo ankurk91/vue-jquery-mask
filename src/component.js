@@ -50,21 +50,39 @@ export default {
   methods: {
     /**
      * Update v-model upon change triggered by user
+     * @param event
      */
     onInput(event) {
       this.$nextTick(() => {
-        let toEmit = this.raw ? jQuery(this.$el).cleanVal() : event.target.value;
-        this.$emit('input', toEmit);
+        this.$emit('input', this.toEmit(event));
       });
     },
+    /**
+     * Get value to be emitted
+     * @param event
+     * @returns {*}
+     */
+    toEmit(event) {
+      return this.raw ? jQuery(this.$el).cleanVal() : event.target.value;
+    },
+    /**
+     * Add support for validation libraries
+     *
+     * @param event
+     */
     onBlur(event) {
-      this.$emit('blur', this.value)
-    }
+      this.$nextTick(() => {
+        let value = this.toEmit(event);
+        this.$emit('blur', value);
+        // jquery-mask plugin may also modify the input value on blur event
+        // so lets keep DOM and v-model in sync
+        this.$emit('input', value);
+      })
+    },
   },
   watch: {
     /**
      * Listen to change from outside of component and update DOM
-     *
      */
     value(newValue) {
       jQuery(this.$el).val(jQuery(this.$el).masked(newValue));

@@ -40,10 +40,15 @@
                         mask="00/00/0000"
                         :raw="false"
                         :options="options.date"
+                        name="date"
+                        v-validate="{required:true}"
+                        :class="{'is-invalid' : errors.has('date')}"
               ></vue-mask>
               <span class="form-text text-muted small">
               {{form.date}}
             </span>
+              <span v-show="errors.has('date')"
+                    class="invalid-feedback">{{ errors.first('date') }}</span>
             </div>
 
             <div class="form-group" :class="{'has-error' : errors.has('money')}">
@@ -113,10 +118,12 @@
         options: {
           date: {
             onChange: this.onChangeDate,
-            placeholder: '__/__/____'
+            placeholder: '__/__/____',
+            clearIfNotMatch: true
           },
           money: {
             reverse: true,
+            selectOnFocus: true
           }
         },
       }
