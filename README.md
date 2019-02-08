@@ -90,7 +90,7 @@ The component accepts these props:
 ## Install in non-module environments (without webpack)
 ```html
 <!-- Vue js -->
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
 <!-- Lastly add this package -->
 <script src="https://cdn.jsdelivr.net/npm/vue-jquery-mask"></script>
 <!-- Install global component -->
