@@ -15,7 +15,7 @@ Vue.js component for [jQuery Mask Plugin](https://github.com/igorescobar/jQuery-
 ## Installation
 ```bash
 # npm
-npm install vue-jquery-mask --save
+npm install vue-jquery-mask
 
 # Yarn
 yarn add vue-jquery-mask
@@ -93,7 +93,7 @@ The component accepts these props:
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
 <!-- Lastly add this package -->
 <script src="https://cdn.jsdelivr.net/npm/vue-jquery-mask"></script>
-<!-- Install global component -->
+<!-- Register global component -->
 <script>
 Vue.use(VuejQueryMask)
 </script>
