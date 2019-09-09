@@ -32,28 +32,28 @@
     "prepublishOnly": "yarn run build"
   },
   "dependencies": {
-    "jquery-mask-plugin": "^1.14.15",
-    "jquery": ">=1.7"
+    "jquery": ">=3.4.1",
+    "jquery-mask-plugin": "^1.14.15"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
     "babel-loader": "^8.0.5",
     "bootstrap": "^4.2.1",
-    "clean-webpack-plugin": "^1.0.1",
+    "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^5.1.6",
-    "css-loader": "^2.1.0",
-    "file-loader": "^3.0.1",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
-    "style-loader": "^0.23.1",
+    "style-loader": "^1.0.0",
     "unminified-webpack-plugin": "^2.0.0",
     "vee-validate": "^2.1.7",
-    "vue": "^2.6.3",
-    "vue-loader": "^15.6.2",
-    "vue-template-compiler": "^2.6.3",
-    "webpack": "^4.29.3",
-    "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.1.14"
+    "vue": "^2.6.10",
+    "vue-loader": "^15.7.1",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.0"
   },
   "peerDependencies": {
     "vue": "^2.0.0"

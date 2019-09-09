@@ -1,9 +1,9 @@
 # Vue jQuery Mask Component
 
-[![downloads](https://img.shields.io/npm/dt/vue-jquery-mask.svg)](http://npm-stats.com/~packages/vue-jquery-mask)
-[![npm-version](https://img.shields.io/npm/v/vue-jquery-mask.svg)](https://www.npmjs.com/package/vue-jquery-mask)
-[![github-tag](https://img.shields.io/github/tag/ankurk91/vue-jquery-mask.svg?maxAge=1800)](https://github.com/ankurk91/vue-jquery-mask/)
-[![license](https://img.shields.io/github/license/ankurk91/vue-jquery-mask.svg?maxAge=1800)](https://yarnpkg.com/en/package/vue-jquery-mask)
+[![downloads](https://badgen.net/npm/dt/vue-jquery-mask)](http://npm-stats.com/~packages/vue-jquery-mask)
+[![npm-version](https://badgen.net/npm/v/vue-jquery-mask)](https://www.npmjs.com/package/vue-jquery-mask)
+[![github-tag](https://badgen.net/github/tag/ankurk91/vue-jquery-mask)](https://github.com/ankurk91/vue-jquery-mask/)
+[![license](https://badgen.net/github/license/ankurk91/vue-jquery-mask)](https://yarnpkg.com/en/package/vue-jquery-mask)
 
 Vue.js component for [jQuery Mask Plugin](https://github.com/igorescobar/jQuery-Mask-Plugin)
 
