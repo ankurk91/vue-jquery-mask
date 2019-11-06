@@ -14,11 +14,11 @@ Vue.js component for [jQuery Mask Plugin](https://github.com/igorescobar/jQuery-
  
 ## Installation
 ```bash
-# npm
-npm install vue-jquery-mask
-
 # Yarn
 yarn add vue-jquery-mask
+
+# npm
+npm install vue-jquery-mask
 ```
 
 #### Using Webpack? 
