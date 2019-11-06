@@ -41,37 +41,29 @@
                         :raw="false"
                         :options="options.date"
                         name="date"
-                        v-validate="{required:true}"
-                        :class="{'is-invalid' : errors.has('date')}"
               ></vue-mask>
               <span class="form-text text-muted small">
               {{form.date}}
             </span>
-              <span v-show="errors.has('date')"
-                    class="invalid-feedback">{{ errors.first('date') }}</span>
             </div>
 
-            <div class="form-group" :class="{'has-error' : errors.has('money')}">
-              <label>Money (vee-validate)</label>
+            <div class="form-group" >
+              <label>Money</label>
               <vue-mask v-model="form.money"
                         mask="#.##0,00"
                         :options="options.money"
                         name="money"
-                        v-validate="{required:true}"
                         class="form-control"
-                        :class="{'is-invalid' : errors.has('money')}"
               ></vue-mask>
-              <span class="form-text text-muted small" v-show="!errors.has('money')">
+              <span class="form-text text-muted small">
               {{form.money}}
             </span>
-              <span v-show="errors.has('money')"
-                    class="invalid-feedback">{{ errors.first('money') }}</span>
             </div>
 
             <hr>
 
             <div class="form-group">
-              <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-ok"></i> Validate form
+              <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-ok"></i> Submit form
               </button>
             </div>
 
@@ -88,7 +80,6 @@
                 <li><a href="https://github.com/igorescobar/jQuery-Mask-Plugin" target="_blank">
                   jQuery-Mask-Plugin
                 </a></li>
-                <li><a href="https://github.com/logaretm/vee-validate" target="_blank">vee-validate</a></li>
               </ul>
             </div>
           </div>
@@ -134,10 +125,6 @@
     methods: {
       submit() {
         console.log('Form submit event', this.form);
-        // http://vee-validate.logaretm.com/examples.html#component-example
-        this.$validator.validateAll().then(result => {
-          alert(`Validation Result: ${result}`);
-        });
       },
       setNewValue() {
         console.log('Set new phone value');
