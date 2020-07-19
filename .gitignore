@@ -39,10 +39,6 @@ $RECYCLE.BIN/
 # node packages
 node_modules/
 
-# Composer, exclude on root vendor folder
-/vendor/
-composer.phar
-
 # Security tokens
 *.pem
 *.pub
