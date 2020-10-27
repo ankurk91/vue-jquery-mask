@@ -9,8 +9,16 @@ Vue.js component for [jQuery Mask Plugin](https://github.com/igorescobar/jQuery-
 
 ## Demo on [JSFiddle](https://jsfiddle.net/ankurk91/d92xgzhL/)
 
+### Version matrix
+
+| Vue.js version | Package version | Branch          |
+| :---           | :---:           | ---:           | 
+| 2.x            | 1.x             | [1.x](https://github.com/ankurk91/vue-jquery-mask/tree/1.x) |
+| 3.x            | 2.x             | master          |
+
 ## Requirements
 * jQuery >=1.7.0 
+* Vue 3.x 
  
 ## Installation
 ```bash
@@ -71,9 +79,10 @@ plugins: [
 
 #### As plugin
 ```js
-  import Vue from 'vue';
-  import vueMask from 'vue-jquery-mask';
-  Vue.use(vueMask);
+  import {createApp} from 'vue';
+  import VueMask from 'vue-jquery-mask';
+  const app = createApp().mount('#app')   
+  app.use(VueMask);
 ```
 This will register a global component `<vue-mask>` 
 
@@ -82,7 +91,7 @@ The component accepts these props:
 
 | Attribute       | Type               | Default  | Required?   | Description      |
 | :---            |  :---:             | :---:    |  :---:      | :---             |
-| v-model / value | String / `null`    |`null`    |  `true`     | Set or Get input value |
+| v-model         | String / `null`    |`null`    |  `true`     | Set or Get input value |
 | mask            | String / Function  | ` `      |  `true`     | Masking pattern |
 | options         | Object             | `{}`     |  `false`    | Configuration [options](http://igorescobar.github.io/jQuery-Mask-Plugin/docs.html)|
 | raw             | Boolean            | `true`   |  `false`    | When set to `false`; emits formatted value with format pattern and delimiters |
@@ -90,18 +99,19 @@ The component accepts these props:
 ## Install in non-module environments (without webpack)
 ```html
 <!-- Vue js -->
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
 <!-- Lastly add this package -->
-<script src="https://cdn.jsdelivr.net/npm/vue-jquery-mask"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-jquery-mask@2"></script>
 <!-- Register global component -->
 <script>
-Vue.use(VuejQueryMask)
+// Your app init login may go here
+app.use(VuejQueryMask)
 </script>
 ```
 
 ## Run examples on your localhost
 * Clone this repo
-* You should have node-js `>=6.10` and yarn `>=1.x` pre-installed
+* You should have node-js `>=10.13` and yarn `>=1.x` pre-installed
 * Install dependencies - `yarn install`
 * Run webpack dev server - `yarn start`
 * This should open the demo page at ``http://localhost:9000`` in your default web browser

@@ -93,8 +93,6 @@
 </template>
 
 <script>
-  import Vue from 'vue';
-
   import vueMask from '../src/index';
 
   export default {
