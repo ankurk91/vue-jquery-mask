@@ -1,21 +1,19 @@
 import jQuery from 'jquery';
 import 'jquery-mask-plugin';
+import {h} from 'vue';
 
 export default {
   name: 'jquery-mask',
-  render(el) {
-    return el('input', {
-      attrs: {
-        type: 'text',
-      },
-      on: {
-        input: this.onInput,
-        blur: this.onBlur,
-      }
+  render() {
+    return h('input', {
+      type: 'text',
+      onInput: this.onInput,
+      onBlur: this.onBlur,
+      ref: 'root'
     })
   },
   props: {
-    value: {
+    modelValue: {
       required: true,
       default: null,
       validator(value) {
@@ -36,16 +34,13 @@ export default {
       default: true
     },
   },
-  data() {
-    return {}
-  },
   mounted() {
     // Clone configs
     let newOptions = jQuery.extend(true, {}, this.options);
     // Lastly init the mask
-    jQuery(this.$el).mask(this.mask, newOptions);
+    jQuery(this.$refs.root).mask(this.mask, newOptions);
     // Set initial value
-    jQuery(this.$el).val(jQuery(this.$el).masked(this.value));
+    jQuery(this.$refs.root).val(jQuery(this.$refs.root).masked(this.modelValue));
   },
   methods: {
     /**
@@ -53,8 +48,8 @@ export default {
      * @param event
      */
     onInput(event) {
-      this.$nextTick(() => {
-        this.$emit('input', this.toEmit(event));
+      this.$nextTick().then(() => {
+        this.$emit('update:modelValue', this.toEmit(event));
       });
     },
     /**
@@ -63,7 +58,7 @@ export default {
      * @returns {*}
      */
     toEmit(event) {
-      return this.raw ? jQuery(this.$el).cleanVal() : event.target.value;
+      return this.raw ? jQuery(this.$refs.root).cleanVal() : event.target.value;
     },
     /**
      * Add support for validation libraries
@@ -71,12 +66,12 @@ export default {
      * @param event
      */
     onBlur(event) {
-      this.$nextTick(() => {
+      this.$nextTick().then(() => {
         let value = this.toEmit(event);
         this.$emit('blur', value);
         // jquery-mask plugin may also modify the input value on blur event
         // so lets keep DOM and v-model in sync
-        this.$emit('input', value);
+        this.$emit('update:modelValue', value);
       })
     },
   },
@@ -84,11 +79,11 @@ export default {
     /**
      * Listen to change from outside of component and update DOM
      */
-    value(newValue) {
-      jQuery(this.$el).val(jQuery(this.$el).masked(newValue));
+    modelValue(newValue) {
+      jQuery(this.$refs.root).val(jQuery(this.$refs.root).masked(newValue));
     },
   },
-  beforeDestroy() {
-    jQuery(this.$el).unmask();
+  beforeUnmount() {
+    jQuery(this.$refs.root).unmask();
   }
 }
