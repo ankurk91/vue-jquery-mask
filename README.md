@@ -104,7 +104,7 @@ The component accepts these props:
 <script src="https://cdn.jsdelivr.net/npm/vue-jquery-mask@2"></script>
 <!-- Register global component -->
 <script>
-// Your app init login may go here
+// Your app init logic may go here
 app.use(VuejQueryMask)
 </script>
 ```
