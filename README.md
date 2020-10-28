@@ -15,10 +15,10 @@ Vue.js component for [jQuery Mask Plugin](https://github.com/igorescobar/jQuery-
 ## Installation
 ```bash
 # Yarn
-yarn add vue-jquery-mask
+yarn add vue-jquery-mask@^1
 
 # npm
-npm install vue-jquery-mask
+npm install vue-jquery-mask@^1
 ```
 
 #### Using Webpack? 
@@ -92,7 +92,7 @@ The component accepts these props:
 <!-- Vue js -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
 <!-- Lastly add this package -->
-<script src="https://cdn.jsdelivr.net/npm/vue-jquery-mask"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-jquery-mask@1"></script>
 <!-- Register global component -->
 <script>
 Vue.use(VuejQueryMask)
